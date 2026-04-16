@@ -1,18 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
-import { createProject } from "./controllers/project.controller";
 import userRoutes from "./routes/user.route";
+import projectRoutes from "./routes/project.route";
 import { errorHandler } from "./middlewares/error.middleware";
-
-export const jsonMiddleware = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  if (!req.is("application/json")) {
-    return res.status(400).json({ error: "JSON required" });
-  }
-  next();
-};
 
 export default class Server {
   readonly port: number;
@@ -30,20 +19,14 @@ export default class Server {
     // Middleware
     app.use(errorHandler);
 
-    // Router
-    app.use(userRoutes);
-
-    // app.get("/", (req: Request, res: Response) => {
-    //   res.send("Hello friends!");
-    // });
-    // app.post("/", createProject);
-
-    /* create User */
-    //app.post("/createUser", createUser);
-    //createUserRoute(req, res);
+    // Routes
+    app.use("/user", userRoutes);
+    app.use("/project", projectRoutes);
 
     app.listen(this.port, function () {
       console.log("server start");
     });
+
+    //return app;
   }
 }

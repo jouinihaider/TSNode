@@ -3,11 +3,11 @@ import { calculateScoreUser, createUser } from "../controllers/user.controller";
 
 const router = Router();
 
-router.get("/user", (req: Request, res: Response) => {
+router.get("/", (req: Request, res: Response) => {
   res.send("Hello friends!");
 });
 
-router.post("/user", createUser);
-router.post("/user/calculate", calculateScoreUser);
+router.post("/", createUser);
+router.post("/calculate", calculateScoreUser);
 
 export default router;

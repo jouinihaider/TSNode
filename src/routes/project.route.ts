@@ -3,4 +3,10 @@ import { createProject } from "../controllers/project.controller";
 
 const router = Router();
 
-router.get("/", createProject);
+router.get("/list", (req: Request, res: Response) => {
+  res.send("Hello Projects!");
+});
+
+router.post("/", createProject);
+
+export default router;
