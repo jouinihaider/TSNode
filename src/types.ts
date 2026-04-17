@@ -20,3 +20,8 @@ export type Order = {
   items: Item[];
   discountCode?: "SAVE10" | "SAVE20";
 };
+
+export type Record<> = {
+  SAVE10: 10;
+  SAVE20: 20;
+};
