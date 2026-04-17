@@ -8,4 +8,5 @@ router.get("/", (req, res) => {
 });
 router.post("/", user_controller_1.createUser);
 router.post("/calculate", user_controller_1.calculateScoreUser);
+router.post("/calculate-queue", user_controller_1.calculateScoreUserQueue);
 exports.default = router;

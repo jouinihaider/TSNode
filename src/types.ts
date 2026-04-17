@@ -12,3 +12,11 @@ export type Action = {
   type: "login" | "purchase";
   count: number;
 };
+
+export type Item = { product: string; price: number; quantity: number };
+
+export type Order = {
+  userId: string;
+  items: Item[];
+  discountCode?: "SAVE10" | "SAVE20";
+};

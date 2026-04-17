@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import userRoutes from "./routes/user.route";
 import projectRoutes from "./routes/project.route";
+import orderRoutes from "./routes/order.route";
 import { errorHandler } from "./middlewares/error.middleware";
 
 export default class Server {
@@ -22,6 +23,7 @@ export default class Server {
     // Routes
     app.use("/user", userRoutes);
     app.use("/project", projectRoutes);
+    app.use("/order", orderRoutes);
 
     app.listen(this.port, function () {
       console.log("server start");
