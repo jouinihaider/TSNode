@@ -3,6 +3,12 @@ export type Material = {
   quantity: number;
 };
 
+export type NewMaterial = {
+  id: number;
+  name: string;
+  co2_per_unit: number;
+};
+
 export type ProjectType = {
   name: string;
   materials: Material;

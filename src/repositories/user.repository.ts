@@ -1,10 +1,11 @@
-//import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma";
 
 export const createUser = async (email: string, score: number) => {
-  //   return prisma.user.create({
-  //     data: {
-  //       email,
-  //       score,
-  //     },
-  //   });
+  console.log("Creating order...");
+  return prisma.user.create({
+    data: {
+      email,
+      score,
+    },
+  });
 };

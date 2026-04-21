@@ -9,7 +9,7 @@ const project_route_1 = __importDefault(require("./routes/project.route"));
 const order_route_1 = __importDefault(require("./routes/order.route"));
 const error_middleware_1 = require("./middlewares/error.middleware");
 class Server {
-    constructor(port) {
+    constructor(port = 4001) {
         this.port = port;
     }
     start() {
@@ -22,10 +22,10 @@ class Server {
         app.use("/user", user_route_1.default);
         app.use("/project", project_route_1.default);
         app.use("/order", order_route_1.default);
-        app.listen(this.port, function () {
-            console.log("server start");
-        });
-        //return app;
+        // app.listen(this.port, function () {
+        //   console.log("server start");
+        // });
+        return app;
     }
 }
 exports.default = Server;

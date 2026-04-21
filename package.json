@@ -15,16 +15,18 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@prisma/client": "^5.22.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.6.0",
     "@types/supertest": "^7.2.0",
     "concurrently": "^9.2.1",
     "jest": "^30.3.0",
     "nodemon": "^3.1.14",
+    "prisma": "^5.22.0",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.9",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.2"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "@types/express": "^5.0.6",

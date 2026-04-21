@@ -1,5 +1,4 @@
 "use strict";
-//import { prisma } from "../lib/prisma";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,12 +10,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createUser = void 0;
+const prisma_1 = require("../lib/prisma");
 const createUser = (email, score) => __awaiter(void 0, void 0, void 0, function* () {
-    //   return prisma.user.create({
-    //     data: {
-    //       email,
-    //       score,
-    //     },
-    //   });
+    console.log("Creating order...");
+    return prisma_1.prisma.user.create({
+        data: {
+            email,
+            score,
+        },
+    });
 });
 exports.createUser = createUser;

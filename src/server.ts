@@ -7,7 +7,7 @@ import { errorHandler } from "./middlewares/error.middleware";
 export default class Server {
   readonly port: number;
 
-  constructor(port: number) {
+  constructor(port: number = 4001) {
     this.port = port;
   }
 
@@ -25,10 +25,10 @@ export default class Server {
     app.use("/project", projectRoutes);
     app.use("/order", orderRoutes);
 
-    app.listen(this.port, function () {
-      console.log("server start");
-    });
+    // app.listen(this.port, function () {
+    //   console.log("server start");
+    // });
 
-    //return app;
+    return app;
   }
 }
